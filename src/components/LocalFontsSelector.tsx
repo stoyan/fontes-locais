@@ -33,8 +33,11 @@ export default function LocalFontsSelector() {
     }
 
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const fontData = await (window as any).queryLocalFonts()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const uniqueFonts = Array.from(new Set(fontData.map((font: any) => font.fullName))).map((fullName) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const font = fontData.find((f: any) => f.fullName === fullName)
         return {
           family: font.family,
@@ -46,8 +49,9 @@ export default function LocalFontsSelector() {
       console.log(fontData[0]);
       setFonts(uniqueFonts)
       setStep(2)
-    } catch (err) {
-      setError("An error occurred while querying local fonts. Make sure you've granted the necessary permissions.")
+      // eslint-disable-next-line
+    } catch (_) {
+      setError("An error occurred while querying local fonts. Make sure you have granted the necessary permissions.")
     }
   }
 
@@ -65,7 +69,8 @@ export default function LocalFontsSelector() {
     try {
       const result = await submitFonts(checkedFonts, userAgent)
       setMessage(result.message)
-    } catch (err) {
+      // eslint-disable-next-line
+    } catch (_) {
       setError("An error occurred while submitting the fonts.")
     } finally {
       setIsSubmitting(false)
@@ -83,7 +88,7 @@ export default function LocalFontsSelector() {
         <>
           <Button onClick={queryFonts}>STEP 1</Button>
           <p className="text-sm text-gray-500">
-            After clicking, you'll be asked to grant permission to access your local fonts.
+            After clicking, you&apos; be asked to grant permission to access your local fonts.
           </p>
         </>
       )}
@@ -92,7 +97,7 @@ export default function LocalFontsSelector() {
         <>
           <h2 className="text-lg font-semibold mb-2">Select fonts to send:</h2>
           <p className="text-sm text-gray-500 mb-2">
-            Uncheck the fonts you don't want to send. Your user-agent string will also be sent:
+            Uncheck the fonts you don&apos;t want to send. Your user-agent string will also be sent:
           </p>
           <p className="text-xs bg-gray-100 p-2 rounded mb-4 break-all">{userAgent}</p>
           <div className="max-h-96 overflow-y-auto">
