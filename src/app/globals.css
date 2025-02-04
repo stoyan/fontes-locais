@@ -6,6 +6,16 @@ body {
   font-family: system-ui, sans-serif;
 }
 
+a {
+  text-decoration: underline;
+}
+
+code {
+  background: #eee;
+  padding: 1px;
+  border-radius: 3px;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
