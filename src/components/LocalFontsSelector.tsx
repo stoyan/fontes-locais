@@ -134,7 +134,12 @@ export default function LocalFontsSelector() {
             When you submit the list, it&apos;s written in GitHub in the{' '}
             <code>/data</code> directory using a timestamp as a file name
           </p>
-
+          {error && (
+            <Alert variant="destructive" className="text-lg">
+              <AlertTitle>Error</AlertTitle>
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
           <Button onClick={queryFonts}>STEP 1: Collect local font info</Button>
           <p className="text-gray-800">
             After clicking, you&apos; be asked to grant permission to access
