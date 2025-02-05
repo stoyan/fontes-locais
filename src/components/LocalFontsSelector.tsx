@@ -46,7 +46,6 @@ export default function LocalFontsSelector() {
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const fontData = await (window as any).queryLocalFonts();
-      console.log(performance.now(), fontData);
       const uniqueFonts = Array.from(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         new Set(fontData.map((font: any) => font.fullName)),
