@@ -123,11 +123,11 @@ export default function LocalFontsSelector() {
           </p>
           <p>
             There are two steps in the process. In step 1 we use{' '}
-            <code>queryFonts</code> to get the data about the local fonts on
-            your device. The <code>queryFonts</code> API is available in Chrome
-            only. In step 2 you review the list of fonts and uncheck any you
-            don&apos;t want to share for whatever reason (e.g. privacy
-            concerns).
+            <code>queryLocalFonts</code> to get the data about the local fonts
+            on your device. The <code>queryLocalFonts</code> API is available in
+            Chrome Windows and Mac only. In step 2 you review the list of fonts
+            and uncheck any you don&apos;t want to share for whatever reason
+            (e.g. privacy concerns).
           </p>
           <p>
             When you submit the list, it&apos;s written in GitHub in the{' '}
