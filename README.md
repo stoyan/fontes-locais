@@ -5,3 +5,5 @@ This web app aims to gather "field data" about default fonts across operating sy
 More info:
 * https://highperformancewebfonts.com/read/which-local-fonts-can-I-use
 * https://calendar.perfplanet.com/2024/fabulous-font-face-fallbacks/
+
+> `Fontes locais` is Portuguese for `local fonts`
